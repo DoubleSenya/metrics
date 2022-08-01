@@ -1,6 +1,7 @@
-const requestUrl = "http://metrics/api/metrics";
+const requestUrl = "/api/metrics";
 
-function sendRequest(url, body) {
+
+function sendRequest(url, data) {
     return new Promise( (resolve, reject) => {
         const xhr = new XMLHttpRequest();
 
@@ -8,11 +9,26 @@ function sendRequest(url, body) {
         xhr.responseType = 'json';
         xhr.setRequestHeader('Content-Type', 'application/json');
 
-        xhr.send(JSON.stringify(body))
+        xhr.onload = () => {
+            console.log(xhr.status);
+        }
+
+        xhr.onerror = () => {
+            console.log(xhr.response);
+        }
+
+        xhr.send(JSON.stringify(data));
     });
 }
 
-/* событие на клик 
+document.body.onclick = (event) => {
 
-
-*/
+    var url = window.location.toString();
+    var data = {
+        url: url,
+        x: event.pageX,
+        y: event.pageY
+    };
+    sendRequest(requestUrl, data);
+    console.log(event.pageX + ':' + event.pageY);
+}
