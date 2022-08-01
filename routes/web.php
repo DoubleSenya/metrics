@@ -16,9 +16,6 @@ use App\Http\Controllers\MainController;
 
 Route::get('/', [MainController::class, 'home'])->name('home');
 
-Route::get('/site/{id}', function ($id) {
-    $main = new MainController();
-    return $main->site($id);
-});
+Route::get('/site/{id}', [MainController::class, 'site']);
 
 Route::post('/check', [MainController::class, 'check']);

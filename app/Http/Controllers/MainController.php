@@ -22,6 +22,7 @@ class MainController extends Controller
     }
 
     public function check(Request $rq){
+        
         $valid = $rq->validate([
             'site_name' => 'required',
             'site_url' => 'required|url'

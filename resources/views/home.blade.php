@@ -39,7 +39,7 @@
             @foreach($sites as $site)
             <tr>
                 <td><a href="/site/{{ $site->id }}">{{ $site->name }}</a></td>
-                <td><a href="$site->url">{{ $site->url }}</a></td>
+                <td><a href="{{ $site->url }}">{{ $site->url }}</a></td>
             </tr>
             @endforeach
         </tbody>
