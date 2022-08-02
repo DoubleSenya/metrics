@@ -23,5 +23,5 @@
   </div>
 
 </body>
-<script src="{{ URL::asset('js/app.js') }}"></script>
+<script src="{{ URL::asset('js/app.js') }}" ></script>
 </html>

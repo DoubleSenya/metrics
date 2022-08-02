@@ -28,8 +28,6 @@ class ApiController extends Controller
         $rq_site = $site->where('url', $rq->input('url'))->first();
         $click->site_id = $rq_site->id;
 
-        $click->save();
-
-        return true;
+        return $click->save();
     }
 }

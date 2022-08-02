@@ -35,3 +35,4 @@ document.body.onclick = (event) => {
     console.log(event.pageX + ':' + event.pageY);
     console.log(url);
 }
+
