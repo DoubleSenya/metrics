@@ -5,7 +5,7 @@
     <br>
     <h2 class="text-center">График кликов</h2>
     <div>
-        <canvas id="myChart" width="400" height="400"></canvas>
+        <canvas id="myChart" width="400" max-height="400"></canvas>
         
     </div>
     <br>
