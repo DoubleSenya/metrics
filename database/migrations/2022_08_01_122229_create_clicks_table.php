@@ -18,6 +18,8 @@ class CreateClicksTable extends Migration
             $table->foreignId('site_id')->constrained('sites');
             $table->integer('coord_x');
             $table->integer('coord_y');
+            $table->integer('window_width');
+            $table->integer('window_height');
             $table->time('time');
             $table->date('date');
         });

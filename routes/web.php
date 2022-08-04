@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,4 @@ Route::get('/', [MainController::class, 'home'])->name('home');
 
 Route::get('/site/{id}', [MainController::class, 'site']);
 
-Route::post('/check', [MainController::class, 'check']);
+Route::post('/check', [PostController::class, 'check']);

@@ -2062,39 +2062,6 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-var requestUrl = "/api/metrics";
-
-function sendRequest(url, data) {
-  return new Promise(function (resolve, reject) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', url);
-    xhr.responseType = 'json';
-    xhr.setRequestHeader('Content-Type', 'application/json');
-
-    xhr.onload = function () {
-      console.log(xhr.status);
-    };
-
-    xhr.onerror = function () {
-      console.log(xhr.response);
-    };
-
-    xhr.send(JSON.stringify(data));
-  });
-}
-
-document.body.onclick = function (event) {
-  var url = window.location.toString();
-  var data = {
-    url: url,
-    x: event.pageX,
-    y: event.pageY
-  };
-  sendRequest(requestUrl, data);
-  console.log(event.pageX + ':' + event.pageY);
-  console.log(url);
-};
-
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
